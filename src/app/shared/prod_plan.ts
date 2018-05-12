@@ -1,0 +1,16 @@
+export interface ProdPlan {
+    altered: String,
+    bf: String,
+    company: String,
+    gsm: String,
+    id: String,
+    newWeight: Number,
+    orderDate: String,
+    orderNumber: Number,
+    orderStatus: Number,
+    reel: String,
+    reelInStock: String,
+    size: Number,
+    voucherKey: Number,
+    weight: Number,
+};
