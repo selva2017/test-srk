@@ -23,6 +23,11 @@ import { UIService } from './shared/ui.service';
 import { AdminExtComponent } from './manage/admin-ext/admin-ext.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartModule } from 'angular2-chartjs';
+import { OrdersComponent } from './orders/orders.component';
+import { EstimatedComponent } from './orders/estimated/estimated.component';
+import { AllComponent } from './orders/all/all.component';
+import { ReEstimatedComponent } from './orders/re-estimated/re-estimated.component';
+import { ApprovedComponent } from './orders/approved/approved.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import { ChartModule } from 'angular2-chartjs';
     PublishComponent,
     ManageComponent,
     AdminExtComponent,
-    DashboardComponent
+    DashboardComponent,
+    OrdersComponent,
+    EstimatedComponent,
+    AllComponent,
+    ReEstimatedComponent,
+    ApprovedComponent
   ],
   imports: [
     BrowserModule,

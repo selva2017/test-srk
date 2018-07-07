@@ -25,6 +25,11 @@
         <!-- <a routerLink="/training">Training</a> -->
         <a routerLinkActive="active" routerLink="/manage">Admin</a>
       </li>
+    
+      <li *ngIf="isAuth && role === '1'">
+        <a routerLinkActive="active" routerLink="/orders">Orders</a>
+        <!-- <a routerLinkActive="active" routerLink="/manage">Admin</a> -->
+      </li>
       <li *ngIf="isAuth">
         <a style="cursor: pointer" (click)="onLogout()">Logout</a>
       </li>

@@ -1,0 +1,14 @@
+<mat-tab-group color="primary" #tabGroup (selectedTabChange)="onLinkClick($event)">
+  <mat-tab label="All Orders">
+    <app-all></app-all>
+  </mat-tab>
+  <mat-tab label="Approved Orders">
+    <app-approved *ngIf="showApprovedOrders"></app-approved>
+  </mat-tab>
+  <mat-tab label="Estimated Orders">
+    <app-estimated *ngIf="showEstimatedOrders"></app-estimated>
+  </mat-tab>
+  <mat-tab label="ReEstimated Orders">
+    <app-re-estimated *ngIf="showReEstimated"></app-re-estimated>
+  </mat-tab>
+</mat-tab-group>
