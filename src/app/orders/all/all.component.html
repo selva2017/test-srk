@@ -2,13 +2,13 @@
   <mat-form-field fxFlex="40%">
     <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
+  <button type="submit" mat-raised-button color="primary" (click)="exporttoCSV()">Export to Excel</button>
 </div>
 
 <p>Order List</p>
 <mat-table #table1="matSort" [dataSource]="dataSource" matSort style="width: 100%">
-
   <ng-container matColumnDef="index">
-    <mat-header-cell *matHeaderCellDef fxFlex="5%">No
+    <mat-header-cell *matHeaderCellDef fxFlex="5%" class="example-first-header-row">No
     </mat-header-cell>
     <mat-cell *matCellDef="let row; let i = index;" fxFlex="5%">
       {{i+1}}
@@ -16,51 +16,54 @@
   </ng-container>
 
   <ng-container matColumnDef="order_DT">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%">Order Date</mat-header-cell>
-    <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.order_DT}}</mat-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Order Date</mat-header-cell>
+    <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.order_DT | date: 'dd-MM-yyyy'}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="order_GROUP_NO">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%">Order #</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Order #</mat-header-cell>
     <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.order_GROUP_NO }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="customer_NAME">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%">Customer Name</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Customer Name</mat-header-cell>
     <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.customer_NAME}}</mat-cell>
   </ng-container>
-  
+
   <ng-container matColumnDef="product_NAME">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%">Product Name</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Product Name</mat-header-cell>
     <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.product_NAME}}</mat-cell>
   </ng-container>
-  
+
   <ng-container matColumnDef="product_UNIT_COST">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%">Cost</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Cost</mat-header-cell>
     <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.product_UNIT_COST}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="total_ORDER_UNIT">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%">Order Units</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Order Units</mat-header-cell>
     <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.total_ORDER_UNIT }}</mat-cell>
   </ng-container>
 
 
   <ng-container matColumnDef="total_COST">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%">Total Cost</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Total Cost</mat-header-cell>
     <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.total_COST}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="sales_REP_ID">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%">Sales Rep</mat-header-cell>
-    <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.sales_REP_ID}}</mat-cell>
+  <ng-container matColumnDef="sales_REP_NAME">
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Sales Rep</mat-header-cell>
+    <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.sales_REP_NAME}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="order_STATUS">
-    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%">Status</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Status</mat-header-cell>
     <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.order_STATUS}}</mat-cell>
   </ng-container>
 
-   <mat-header-row *matHeaderRowDef="displayedColumns" style="background:orange"></mat-header-row>
+  <mat-header-row *matHeaderRowDef="displayedColumns" style="background:orange" ></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
+<div>
+
+</div>

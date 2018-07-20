@@ -72,11 +72,11 @@ export class AdminComponent implements OnInit {
     });
     this.showLoader = true;
     this.uiService.loadingStateChanged.next(true);
-    this.subscription = this.serverService.getInternalUsers().
+    this.subscription = this.serverService.getInternalUsers('all').
       subscribe(list => {
         this.userList = list;
         // console.log("this.userlist");
-        // console.log(this.userList);
+        console.log(this.userList);
         this.dataSource.data = list;
         this.showLoader = false;
         this.uiService.loadingStateChanged.next(false);

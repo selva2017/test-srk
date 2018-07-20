@@ -11,7 +11,7 @@
 // hue. Available color palettes: https://www.google.com/design/spec/style/color.html
 $candy-app-primary: mat-palette($mat-indigo);
 $candy-app-accent: mat-palette($mat-orange, A200, A100, A400);
-
+$accent:  mat-palette($mat-light-blue, 600, 100, 800);
 // The warn palette is optional (defaults to red).
 $candy-app-warn: mat-palette($mat-red);
 

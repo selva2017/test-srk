@@ -24,6 +24,7 @@ import { AdminExtComponent } from './manage/admin-ext/admin-ext.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartModule } from 'angular2-chartjs';
 import { OrdersComponent } from './orders/orders.component';
+import { SubOrdersComponent } from './sub-orders/sub-orders.component';
 import { EstimatedComponent } from './orders/estimated/estimated.component';
 import { AllComponent } from './orders/all/all.component';
 import { ReEstimatedComponent } from './orders/re-estimated/re-estimated.component';
@@ -47,7 +48,8 @@ import { ApprovedComponent } from './orders/approved/approved.component';
     EstimatedComponent,
     AllComponent,
     ReEstimatedComponent,
-    ApprovedComponent
+    ApprovedComponent,
+    SubOrdersComponent
   ],
   imports: [
     BrowserModule,

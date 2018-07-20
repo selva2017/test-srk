@@ -1,11 +1,11 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="accent">
   <div fxHide.gt-xs>
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
   <div>
-    <img src="https://s3.ap-south-1.amazonaws.com/bizdaz-images/web/{{companyId}}.png">
+    <img src="https://s3.ap-south-1.amazonaws.com/bizdaz-images/{{companyId}}.jpg">
     <!-- <a routerLink="/">LOGO</a> -->
   </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
@@ -16,18 +16,23 @@
       <li *ngIf="!isAuth">
         <a routerLink="/login">Login</a>
       </li>
-      <li *ngIf="isAuth">
+      <li *ngIf="isAuth" [ngClass]="{ 'target': isTarget === 'dashboard'  }" (click)="onClickLink('dashboard')">
+        <!-- <li *ngIf="isAuth" [ngClass]="{ 'target': isTarget === t  }" (click)="isTarget = t"> -->
         <!-- <a routerLink="/training">Training</a> -->
         <a routerLinkActive="active" routerLink="/dashboard">Dashboard</a>
       </li>
-    
-      <li *ngIf="isAuth && role === '1'">
+
+      <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'admin'  }" (click)="onClickLink('admin')">
         <!-- <a routerLink="/training">Training</a> -->
         <a routerLinkActive="active" routerLink="/manage">Admin</a>
       </li>
-    
-      <li *ngIf="isAuth && role === '1'">
+
+      <li *ngIf="isAuth && role === '1'"  [ngClass]="{ 'target': isTarget === 'orders'  }" (click)="onClickLink('orders')">
         <a routerLinkActive="active" routerLink="/orders">Orders</a>
+        <!-- <a routerLinkActive="active" routerLink="/manage">Admin</a> -->
+      </li>
+      <li *ngIf="isAuth && role === '1'"  [ngClass]="{ 'target': isTarget === 'sub-orders'  }" (click)="onClickLink('sub-orders')">
+        <a routerLinkActive="active" routerLink="/sub-orders">SubOrders</a>
         <!-- <a routerLinkActive="active" routerLink="/manage">Admin</a> -->
       </li>
       <li *ngIf="isAuth">

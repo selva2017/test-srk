@@ -1,14 +1,20 @@
 <mat-tab-group color="primary" #tabGroup (selectedTabChange)="onLinkClick($event)">
-  <mat-tab label="All Orders">
+  <mat-tab label="Approved Orders">
     <app-all></app-all>
   </mat-tab>
-  <mat-tab label="Approved Orders">
-    <app-approved *ngIf="showApprovedOrders"></app-approved>
-  </mat-tab>
-  <mat-tab label="Estimated Orders">
-    <app-estimated *ngIf="showEstimatedOrders"></app-estimated>
-  </mat-tab>
+  <mat-tab label="Price Check Requested"></mat-tab>
+  <mat-tab label="Price Check Responded"></mat-tab>
+  <mat-tab label="Estimated Orders"></mat-tab>
+  <!-- <mat-tab label="Approved Orders"> -->
+    <!-- <app-approved *ngIf="showApprovedOrders"></app-approved> -->
+  <!-- </mat-tab> -->
   <mat-tab label="ReEstimated Orders">
-    <app-re-estimated *ngIf="showReEstimated"></app-re-estimated>
+    <!-- <app-re-estimated *ngIf="showReEstimated"></app-re-estimated> -->
   </mat-tab>
+  <!-- <mat-tab label="Planned SubOrders"></mat-tab>
+  <mat-tab label="Allocated SubOrders"></mat-tab>
+  <mat-tab label="Loaded SubOrders"></mat-tab>
+  <mat-tab label="Weighed SubOrders"></mat-tab>
+  <mat-tab label="InTransit SubOrders"></mat-tab>
+  <mat-tab label="Completed SubOrders"></mat-tab> -->
 </mat-tab-group>

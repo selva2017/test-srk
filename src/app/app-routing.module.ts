@@ -1,3 +1,4 @@
+import { SubOrdersComponent } from './sub-orders/sub-orders.component';
 import { ReEstimatedComponent } from './orders/re-estimated/re-estimated.component';
 import { ApprovedComponent } from './orders/approved/approved.component';
 import { EstimatedComponent } from './orders/estimated/estimated.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   // { path: 'dashboard', component: DashboardComponent}
   { path: 'orders', component: OrdersComponent},
+  { path: 'sub-orders', component: SubOrdersComponent},
   { path: 'all', component: AllComponent},
   { path: 'estimated', component: EstimatedComponent},
   { path: 'reestimated', component: ReEstimatedComponent},
