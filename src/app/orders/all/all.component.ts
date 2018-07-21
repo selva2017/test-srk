@@ -20,7 +20,7 @@ export class AllComponent implements OnInit {
   dataSource = new MatTableDataSource<Orders>();
   orders: Orders[];
   subscription: Subscription;
-  displayedColumns = ['index', 'order_DT', 'order_GROUP_NO', 'customer_NAME', 'product_NAME', 'product_UNIT_COST', 'total_ORDER_UNIT', 'total_COST', 'sales_REP_NAME', 'order_STATUS'];
+  displayedColumns = ['index', 'order_DT', 'order_GROUP_NO', 'customer_NAME', 'product_NAME', 'product_UNIT_COST', 'total_ORDER_UNIT', 'total_COST', 'sales_REP_NAME', 'order_STATUS','action'];
   // displayedColumns = ['index','order_DT', 'order_GROUP_NO', 'company', 'bf', 'size', 'voucherKey', 'weight', 'newWeight', 'reel', 'reelInStock', 'select'];
   // columns: any[];
   constructor(private serverService: ServerService) { }
@@ -119,4 +119,27 @@ export class AllComponent implements OnInit {
     );
     DataGridUtil.downloadcsv(exprtcsv, this.exportFileName);
   }
+  onClickView(order_group_no) {
+    // this.dayBook_row = record;
+    console.log(order_group_no);
+    // const dialogRef = this.dialog.open(DaybookDialogComponent, {
+    //   // height: '90%',
+    //   // width: '60%',
+    //   height: "640px",
+    //   width: '"640px"',
+    //   data: {
+    //     progress: this.dayBook_row
+    //   }
+    // });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   if (result) {
+    //     // console.log("true");
+    //     this.onClickReviewed(key);
+    //   } else {
+    //     // console.log("false");
+    //   }
+    // });
+  }
+
+
 }

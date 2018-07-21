@@ -1,4 +1,4 @@
-<mat-toolbar color="accent">
+<mat-toolbar color="primary">
   <div fxHide.gt-xs>
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
@@ -8,7 +8,7 @@
     <img src="https://s3.ap-south-1.amazonaws.com/bizdaz-images/{{companyId}}.jpg">
     <!-- <a routerLink="/">LOGO</a> -->
   </div>
-  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs padding>
     <ul fxLayout fxLayoutGap="20px" class="navigation-items">
       <li *ngIf="!isAuth">
         <a routerLinkActive="active" routerLink="/signup">Signup</a>

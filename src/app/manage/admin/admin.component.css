@@ -1,27 +1,38 @@
-.example-radio-group {
-    display: inline-flex;
-    flex-direction: column;
-  }
-  
-  .example-radio-button {
-    margin: 5px;
-  }
-  
-  .example-selected-value {
-    margin: 15px 0;
-  }
-  /* .example-form { */
-  .table {
-    /* min-width: 150px; */
-    /* max-width: 500px; */
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-    padding: 30px;
-    /* padding-left: 6px; */
-  }
-  table, td, th {
-    border: .5px solid #ddd !important;
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  /* text-transform: uppercase; */
+  background-color: #3F51B5;
+  color: white;
 }

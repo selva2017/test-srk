@@ -5,9 +5,11 @@
     </div>
     <div *ngIf="!isLoading">
       <br>
-      <h3>Internal User List and Roles</h3>
+      <!-- <h3>Internal User List and Roles</h3> -->
       <table class="example-full-width">
-        <thead color="#FB8C00">
+        <caption>Internal User List and Roles</caption>
+        <!-- <thead color="#FB8C00"> -->
+        <thead>
           <tr>
             <th>No</th>
             <th>User Name</th>
@@ -34,15 +36,16 @@
               <option *ngFor="let role of userList.roles" [ngValue]="role.roleId">{{userList.roleName}}</option>
               </select> -->
               <form action="">
-                <div *ngFor="let role of userList.roles;let i = index">
+                <div *ngFor="let role of userList.roles;let i = index"
+                style="text-align:left">
                   <!-- <div [ngIf]="role.roleName != 'Customer' || role.roleName != 'Supplier'"> -->
-                    <mat-radio-button color="warn" class="example-radio-button" [name]="row.userName" [value]="role.roleId" [checked]="row.role === role.roleId"
-                      (change)="setRole(row,role.roleId)">{{role.roleName}}
-                    </mat-radio-button>
-                    <!-- <input type="radio" [name]="row.userName" [value]="role.roleId" [checked]="row.role === role.roleId" (change)="setRole(row,role.roleId)">{{role.roleName}} -->
-                    <br>
-                    <!-- <input type="radio" [name]="row.userName" [value]="role.roleId"  [checked]="row.role === 'role.roleId'" (change)="setRole('role.roleId')">{{role.roleName}}<br> -->
-                    <!-- <input type="radio" [name]="row.userName" value="1"  [checked]="row.role === '1'" (change)="setRole('1')">Admin<br>
+                  <mat-radio-button color="warn" class="example-radio-button" [name]="row.userName" [value]="role.roleId" [checked]="row.role === role.roleId"
+                    (change)="setRole(row,role.roleId)">{{role.roleName}}
+                  </mat-radio-button>
+                  <!-- <input type="radio" [name]="row.userName" [value]="role.roleId" [checked]="row.role === role.roleId" (change)="setRole(row,role.roleId)">{{role.roleName}} -->
+                  <br>
+                  <!-- <input type="radio" [name]="row.userName" [value]="role.roleId"  [checked]="row.role === 'role.roleId'" (change)="setRole('role.roleId')">{{role.roleName}}<br> -->
+                  <!-- <input type="radio" [name]="row.userName" value="1"  [checked]="row.role === '1'" (change)="setRole('1')">Admin<br>
                   <input type="radio" [name]="row.userName" value="2"  [checked]="row.role === '2'" (change)="setRole('2')">Director<br>
                   <input type="radio" [name]="row.userName" value="3"  [checked]="row.role === '3'" (change)="setRole('3')">Shareholder -->
                   <!-- </div> -->

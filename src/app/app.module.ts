@@ -1,7 +1,7 @@
 import { InventoryService } from './shared/inventory.service';
 import { ServerService } from './shared/server.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -25,10 +25,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartModule } from 'angular2-chartjs';
 import { OrdersComponent } from './orders/orders.component';
 import { SubOrdersComponent } from './sub-orders/sub-orders.component';
+import { ApprovedsoComponent } from './sub-orders/approvedso/approvedso.component';
 import { EstimatedComponent } from './orders/estimated/estimated.component';
 import { AllComponent } from './orders/all/all.component';
 import { ReEstimatedComponent } from './orders/re-estimated/re-estimated.component';
 import { ApprovedComponent } from './orders/approved/approved.component';
+import { DialogComponent } from './orders/dialog.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { ApprovedComponent } from './orders/approved/approved.component';
     AllComponent,
     ReEstimatedComponent,
     ApprovedComponent,
-    SubOrdersComponent
+    SubOrdersComponent,
+    ApprovedsoComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +68,6 @@ import { ApprovedComponent } from './orders/approved/approved.component';
   ],
   providers: [InventoryService,AuthService, ServerService,UIService],
   bootstrap: [AppComponent],
-  entryComponents: []
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }
