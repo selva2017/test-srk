@@ -34,7 +34,8 @@ export class SignupComponent implements OnInit {
         confirmPassword: form.value.confirmPassword,
         firstName: form.value.firstName,
         lastName: form.value.lastName,
-        companyId: form.value.companyId
+        companyId: form.value.companyId,
+        employeeId: form.value.employeeId
       });
     }
   }

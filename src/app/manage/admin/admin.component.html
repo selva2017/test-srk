@@ -13,6 +13,7 @@
           <tr>
             <th>No</th>
             <th>User Name</th>
+            <th>Emp ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Role Name</th>
@@ -27,6 +28,7 @@
             <!-- <tr *ngFor="let row of userList.users | paginate: { itemsPerPage: 10, currentPage: p }; let i = index"> -->
             <td>{{i+1}}</td>
             <td style="padding-left:15px;">{{row.userName}}</td>
+            <td>{{row.employeeId}}</td>
             <td>{{row.firstName}}</td>
             <td>{{row.lastName}}</td>
             <!-- <td>{{row.roleName}}</td> -->

@@ -5,4 +5,5 @@ export interface AuthData {
   firstName: string;
   lastName: string;
   companyId: string;
+  employeeId: string;
 }

@@ -1,3 +1,4 @@
+import { CommonServicesService } from './../../shared/common-services.service';
 import { Subscription } from 'rxjs/Subscription';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { ServerService } from './../../shared/server.service';
@@ -11,7 +12,7 @@ import { UIService } from '../../shared/ui.service';
   styleUrls: ['./approvedso.component.css']
 })
 export class ApprovedsoComponent implements OnInit {
-  @ViewChild('table1') table1: MatSort;
+  // @ViewChild('table1') table1: MatSort;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -23,9 +24,11 @@ export class ApprovedsoComponent implements OnInit {
   isLoading = false;
   private loadingSubs: Subscription;
 
-  constructor(private serverService: ServerService, private uiService: UIService) { }
+  constructor(private serverService: ServerService, private uiService: UIService, 
+    private commonServices: CommonServicesService) { }
 
   ngOnInit() {
+    this.dataSource.paginator = this.paginator;
     this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
       this.isLoading = isLoading;
     });
@@ -40,8 +43,12 @@ export class ApprovedsoComponent implements OnInit {
       subscribe(list => {
         console.log(list);
         this.subOrders = list;
-        this.dataSource.data = this.subOrders;
-        !this.dataSource.paginator ? this.dataSource.paginator = this.paginator : null;
+        setTimeout(() => {
+          this.dataSource.data = this.subOrders;
+          !this.dataSource.paginator ? this.dataSource.paginator = this.paginator : null;
+          this.dataSource.sort = this.sort;
+        }); this.showLoader = false;
+
         this.showLoader = false;
         this.uiService.loadingStateChanged.next(false);
       },
@@ -51,7 +58,7 @@ export class ApprovedsoComponent implements OnInit {
     this.showLoader = false;
   }
   ngAfterViewInit() {
-    this.dataSource.sort = this.table1;
+    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
 
   }
@@ -60,4 +67,11 @@ export class ApprovedsoComponent implements OnInit {
     // this.dataSource_restore.filter = filterValue.trim().toLowerCase();
     // this.dataSource_prodplans.filter = filterValue.trim().toLowerCase();
   }
+  convertIndianRupee(amount) {
+    return this.commonServices.displayINR(amount);
+  }
+  convertIndianFormat(amount) {
+    return this.commonServices.displayIndianFormat(amount);
+  }
+  
 }

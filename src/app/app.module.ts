@@ -1,3 +1,4 @@
+import { CommonServicesService } from './shared/common-services.service';
 import { InventoryService } from './shared/inventory.service';
 import { ServerService } from './shared/server.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,6 +32,7 @@ import { AllComponent } from './orders/all/all.component';
 import { ReEstimatedComponent } from './orders/re-estimated/re-estimated.component';
 import { ApprovedComponent } from './orders/approved/approved.component';
 import { DialogComponent } from './orders/dialog.component';
+import { MatButtonModule } from '../../node_modules/@angular/material';
 
 @NgModule({
   declarations: [
@@ -64,9 +66,10 @@ import { DialogComponent } from './orders/dialog.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    ChartModule
+    ChartModule,
+   
   ],
-  providers: [InventoryService,AuthService, ServerService,UIService],
+  providers: [InventoryService,AuthService, ServerService,UIService,CommonServicesService],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent]
 })

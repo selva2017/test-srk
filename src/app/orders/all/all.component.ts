@@ -33,7 +33,7 @@ export class AllComponent implements OnInit {
     // this.subscription = this.serverService.getMessages().
     this.subscription = this.serverService.fetchAllOrderByStatus("APPROVED").
       subscribe(list => {
-        console.log(list);
+        // console.log(list);
         this.orders = list;
         this.dataSource.data = this.orders;
         !this.dataSource.paginator ? this.dataSource.paginator = this.paginator : null;
@@ -104,7 +104,7 @@ export class AllComponent implements OnInit {
     },
   ];
   exporttoCSV() {
-    console.log(this.orders);
+    // console.log(this.orders);
     let exprtcsv: any[] = [];
     (<any[]>JSON.parse(JSON.stringify(this.orders))).forEach(x => {
       var obj = new Object();
@@ -121,7 +121,7 @@ export class AllComponent implements OnInit {
   }
   onClickView(order_group_no) {
     // this.dayBook_row = record;
-    console.log(order_group_no);
+    // console.log(order_group_no);
     // const dialogRef = this.dialog.open(DaybookDialogComponent, {
     //   // height: '90%',
     //   // width: '60%',

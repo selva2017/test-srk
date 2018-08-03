@@ -1,7 +1,7 @@
 <section class="signup-form">
   <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
     <mat-form-field>
-      <input type="email" matInput placeholder="Your email" ngModel name="email" email required minlength="6" #emailInput="ngModel">
+      <input type="text" matInput placeholder="Your Username" ngModel name="email" required minlength="6" #emailInput="ngModel">
       <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
       <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid. Has to be at least 6 characters long.</mat-error>
     </mat-form-field>
@@ -18,18 +18,25 @@
     <mat-form-field>
       <input type="text" matInput placeholder="Your First Name" ngModel name="firstName" required #firstName="ngModel">
       <mat-error *ngIf="firstName.hasError('required')">Field must not be empty.</mat-error>
-      <mat-error *ngIf="!firstName.hasError('required')">E-Mail is invalid.</mat-error>
+      <mat-error *ngIf="!firstName.hasError('required')">First Name is invalid.</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input type="text" matInput placeholder="Your Last Name" ngModel name="lastName" required #lastName="ngModel">
       <mat-error *ngIf="lastName.hasError('required')">Field must not be empty.</mat-error>
-      <mat-error *ngIf="!lastName.hasError('required')">E-Mail is invalid.</mat-error>
+      <mat-error *ngIf="!lastName.hasError('required')">Last Name is invalid.</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input type="text" matInput placeholder="Company ID" ngModel name="companyId" required #companyId="ngModel">
-      <mat-error *ngIf="companyId.hasError('required')">Field must not be empty.</mat-error>
+      <mat-error *ngIf="companyId.hasError('required')">Company ID must not be empty.</mat-error>
       <mat-error *ngIf="!companyId.hasError('required')">E-Mail is invalid.</mat-error>
     </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Employee ID" ngModel name="employeeId" required #employeeId="ngModel">
+      <mat-error *ngIf="employeeId.hasError('required')">Employee ID must not be empty.</mat-error>
+      <mat-error *ngIf="!employeeId.hasError('required')">Employee ID is invalid.</mat-error>
+    </mat-form-field>
+
 
     <!-- <mat-form-field>
       <input matInput placeholder="Your birthdate" [matDatepicker]="picker" [max]="maxDate" ngModel name="birthdate" required>

@@ -16,11 +16,11 @@
       <li *ngIf="!isAuth">
         <a routerLink="/login">Login</a>
       </li>
-      <li *ngIf="isAuth" [ngClass]="{ 'target': isTarget === 'dashboard'  }" (click)="onClickLink('dashboard')">
+      <!-- <li *ngIf="isAuth" [ngClass]="{ 'target': isTarget === 'dashboard'  }" (click)="onClickLink('dashboard')"> -->
         <!-- <li *ngIf="isAuth" [ngClass]="{ 'target': isTarget === t  }" (click)="isTarget = t"> -->
         <!-- <a routerLink="/training">Training</a> -->
-        <a routerLinkActive="active" routerLink="/dashboard">Dashboard</a>
-      </li>
+        <!-- <a routerLinkActive="active" routerLink="/dashboard">Dashboard</a> -->
+      <!-- </li> -->
 
       <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'admin'  }" (click)="onClickLink('admin')">
         <!-- <a routerLink="/training">Training</a> -->

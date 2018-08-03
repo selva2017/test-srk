@@ -5,4 +5,5 @@ export interface UserRegister {
     firstName: string;
     lastName: string;
     companyId: string;
+    employeeId: string;
 }

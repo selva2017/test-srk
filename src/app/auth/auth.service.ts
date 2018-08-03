@@ -79,7 +79,8 @@ export class AuthService {
 
   private authSuccessfully() {
     this.authChange.next(true);
-    this.router.navigate(['/dashboard']);
+    // this.router.navigate(['/dashboard']);
+    this.router.navigate(['/welcome']);
   }
 
   signinUser(user) {
@@ -92,7 +93,8 @@ export class AuthService {
         if (success.statusMessage == "AUTH_SUCCESS") {
           this.token = true;
           this.authChange.next(true);
-          this.router.navigate(['/dashboard']);
+          // this.router.navigate(['/dashboard']);
+          this.router.navigate(['/welcome']);
           this.isAdmin(success.role);
           this.token_name = success.token;
           localStorage.setItem('token', this.token_name);
