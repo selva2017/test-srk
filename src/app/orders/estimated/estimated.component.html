@@ -1,3 +1,83 @@
-<p>
-  estimated works!
-</p>
+<div *ngIf="isLoading" class="loader-padding" fxLayout="column" fxLayoutAlign="center center" style="position:fixed;top:50%;left:50%;"
+  style="position:fixed;top:40%;left:45%;">
+  <mat-progress-spinner color="accent" mode="indeterminate"></mat-progress-spinner>
+</div>
+<div *ngIf="!isLoading" style="padding:20px;">
+
+  <div fxLayoutAlign="center center" fxLayout="row" fxLayoutGap="25px">
+    <mat-form-field fxFlex="40%">
+      <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    <!-- <button type="submit" mat-raised-button color="accent" (click)="exporttoCSV()">Export to Excel</button> -->
+  </div>
+
+  <!-- <p>Order List</p> -->
+  <mat-table [dataSource]="dataSource" matSort style="width: 100%">
+    <ng-container matColumnDef="index">
+      <mat-header-cell *matHeaderCellDef fxFlex="5%" class="example-first-header-row">No
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row; let i = index;" fxFlex="5%">
+        {{i+1}}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="order_DT">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Order Date</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.order_DT | date: 'dd-MM-yyyy'}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="order_GROUP_NO">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Order #</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.order_GROUP_NO }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="customer_NAME">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Customer Name</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.customer_NAME}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="product_NAME">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="20%" class="example-first-header-row">Product Name</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="20%">{{ element.product_NAME}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="product_UNIT_COST">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Cost</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="10%">{{ convertIndianRupee(element.product_UNIT_COST)}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="total_ORDER_UNIT">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="5%" class="example-first-header-row">Order Units</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="5%">{{ convertIndianFormat(element.total_ORDER_UNIT) }}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="total_COST">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Total Cost</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="10%">{{  convertIndianRupee(element.total_COST)}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sales_REP_NAME">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Sales Rep</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.sales_REP_NAME}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="order_STATUS">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Order Status</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.order_STATUS}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">View</mat-header-cell>
+      <mat-cell *matCellDef="let row;" fxFlex="10%">
+        <button mat-raised-button color="primary" (click)="onClickView(row.order_GROUP_NO)">SubOrders</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns" style="background:#ffab40"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 25, 50, 100]">
+    </mat-paginator>
+</div>

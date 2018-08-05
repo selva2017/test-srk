@@ -1,3 +1,5 @@
+import { DeliveredOrdersComponent } from './orders/delivered-orders/delivered-orders.component';
+import { CompletedOrdersComponent } from './orders/completed-orders/completed-orders.component';
 import { VehicleListComponent } from './vehicles/vehicle-list/vehicle-list.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
@@ -42,6 +44,7 @@ import { ApprovedComponent } from './orders/approved/approved.component';
 import { DialogComponent } from './orders/dialog.component';
 import { MatButtonModule } from '../../node_modules/@angular/material';
 import { ProductsComponent } from './products/products.component';
+import { RejectedOrdersComponent } from './orders/rejected-orders/rejected-orders.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +76,10 @@ import { ProductsComponent } from './products/products.component';
     EmployeesComponent,
     EmployeeListComponent,
     VehiclesComponent,
-    VehicleListComponent
+    VehicleListComponent,
+    RejectedOrdersComponent,
+    CompletedOrdersComponent,
+    DeliveredOrdersComponent
   ],
   imports: [
     BrowserModule,
