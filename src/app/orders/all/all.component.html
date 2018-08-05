@@ -2,7 +2,7 @@
   <mat-form-field fxFlex="40%">
     <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
-  <button type="submit" mat-raised-button color="primary" (click)="exporttoCSV()">Export to Excel</button>
+  <button type="submit" mat-raised-button color="accent" (click)="exporttoCSV()">Export to Excel</button>
 </div>
 
 <!-- <p>Order List</p> -->
@@ -64,7 +64,7 @@
   <ng-container matColumnDef="action">
     <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Action</mat-header-cell>
       <mat-cell *matCellDef="let row;" fxFlex="10%">
-        <button mat-raised-button color="primary" (click)="onClickView(row.order_GROUP_NO)">Details</button>
+        <button mat-raised-button color="accent" (click)="onClickView(row.order_GROUP_NO)">Details</button>
       </mat-cell>
   </ng-container>
 

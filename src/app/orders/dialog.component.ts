@@ -30,8 +30,9 @@ export class DialogComponent {
     this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
       this.isLoading = isLoading;
     });
-    this.showLoader = true;
-    this.uiService.loadingStateChanged.next(true);
+    // This is causing reset of the main window
+    // this.showLoader = true;
+    // this.uiService.loadingStateChanged.next(true);
 
     // console.log("passedData");
     this.order_number = passedData.progress;
@@ -45,8 +46,9 @@ export class DialogComponent {
         // console.log(this.subOrders);
         // console.table(this.subOrders);
         // console.dir(this.subOrders);
-        this.showLoader = false;
-        this.uiService.loadingStateChanged.next(false);
+        // This is causing reset of the main window
+        // this.showLoader = false;
+        // this.uiService.loadingStateChanged.next(false);
         // !this.dataSource.paginator ? this.dataSource.paginator = this.paginator : null;
       }
       )

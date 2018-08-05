@@ -1,8 +1,12 @@
-<mat-tab-group color="primary" #tabGroup (selectedTabChange)="onLinkClick($event)">
-  <mat-tab label="Approved SubOrders">
+<mat-tab-group color="accent" #tabGroup (selectedTabChange)="onLinkClick($event)">
+  <mat-tab label="Approved">
     <app-approvedso></app-approvedso>
   </mat-tab>
-  <mat-tab label="Allocated SubOrders"></mat-tab>
+  <mat-tab label="Loading"></mat-tab>
+  <mat-tab label="Weighing"></mat-tab>
+  <mat-tab label="Transit"></mat-tab>
+  <mat-tab label="Completed"></mat-tab>
+  <mat-tab label="Deviated"></mat-tab>
   <!-- <mat-tab label="Planned SubOrders"></mat-tab>
   <mat-tab label="Allocated SubOrders"></mat-tab>
   <mat-tab label="Loaded SubOrders"></mat-tab>

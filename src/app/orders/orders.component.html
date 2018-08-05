@@ -1,8 +1,12 @@
-<mat-tab-group color="primary" #tabGroup (selectedTabChange)="onLinkClick($event)">
+<mat-tab-group color="accent" #tabGroup (selectedTabChange)="onLinkClick($event)">
   <mat-tab label="Approved Orders">
     <app-approved></app-approved>
   </mat-tab>
-  <mat-tab label="Price Check Requested"></mat-tab>
+  <mat-tab label="Estimated Orders">
+    <app-estimated></app-estimated>
+  </mat-tab>
+  <mat-tab label="Rejected Orders"></mat-tab>
+  <mat-tab label="Completed Orders"></mat-tab>
   <!-- <mat-tab label="Price Check Responded"></mat-tab> -->
   <!-- <mat-tab label="Estimated Orders">
     <app-estimated></app-estimated>

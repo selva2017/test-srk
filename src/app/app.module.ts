@@ -1,3 +1,11 @@
+import { VehicleListComponent } from './vehicles/vehicle-list/vehicle-list.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { PriceCheckComponent } from './price-check/price-check.component';
+import { PcRequestsComponent } from './price-check/pc-requests/pc-requests.component';
+import { PcResponsesComponent } from './price-check/pc-responses/pc-responses.component';
 import { CommonServicesService } from './shared/common-services.service';
 import { InventoryService } from './shared/inventory.service';
 import { ServerService } from './shared/server.service';
@@ -33,6 +41,7 @@ import { ReEstimatedComponent } from './orders/re-estimated/re-estimated.compone
 import { ApprovedComponent } from './orders/approved/approved.component';
 import { DialogComponent } from './orders/dialog.component';
 import { MatButtonModule } from '../../node_modules/@angular/material';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +64,16 @@ import { MatButtonModule } from '../../node_modules/@angular/material';
     ApprovedComponent,
     SubOrdersComponent,
     ApprovedsoComponent,
-    DialogComponent
+    DialogComponent,
+    PriceCheckComponent,
+    PcRequestsComponent,
+    PcResponsesComponent,
+    ProductsComponent,
+    ProductListComponent,
+    EmployeesComponent,
+    EmployeeListComponent,
+    VehiclesComponent,
+    VehicleListComponent
   ],
   imports: [
     BrowserModule,

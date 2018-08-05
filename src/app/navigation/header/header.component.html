@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="accent">
   <div fxHide.gt-xs>
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
@@ -17,21 +17,33 @@
         <a routerLink="/login">Login</a>
       </li>
       <!-- <li *ngIf="isAuth" [ngClass]="{ 'target': isTarget === 'dashboard'  }" (click)="onClickLink('dashboard')"> -->
-        <!-- <li *ngIf="isAuth" [ngClass]="{ 'target': isTarget === t  }" (click)="isTarget = t"> -->
-        <!-- <a routerLink="/training">Training</a> -->
-        <!-- <a routerLinkActive="active" routerLink="/dashboard">Dashboard</a> -->
+      <!-- <li *ngIf="isAuth" [ngClass]="{ 'target': isTarget === t  }" (click)="isTarget = t"> -->
+      <!-- <a routerLink="/training">Training</a> -->
+      <!-- <a routerLinkActive="active" routerLink="/dashboard">Dashboard</a> -->
       <!-- </li> -->
 
       <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'admin'  }" (click)="onClickLink('admin')">
         <!-- <a routerLink="/training">Training</a> -->
         <a routerLinkActive="active" routerLink="/manage">Admin</a>
       </li>
-
-      <li *ngIf="isAuth && role === '1'"  [ngClass]="{ 'target': isTarget === 'orders'  }" (click)="onClickLink('orders')">
+      <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'price-check'  }" (click)="onClickLink('price-check')">
+        <!-- <a routerLink="/training">Training</a> -->
+        <a routerLinkActive="active" routerLink="/price-check">Price Check</a>
+      </li>
+      <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'employees'  }" (click)="onClickLink('employees')">
+        <a routerLinkActive="active" routerLink="/employees">Employees</a>
+      </li>
+      <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'vehicles'  }" (click)="onClickLink('vehicles')">
+        <a routerLinkActive="active" routerLink="/vehicles">Vehicles</a>
+      </li>
+      <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'products'  }" (click)="onClickLink('products')">
+        <a routerLinkActive="active" routerLink="/products">Products</a>
+      </li>
+      <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'orders'  }" (click)="onClickLink('orders')">
         <a routerLinkActive="active" routerLink="/orders">Orders</a>
         <!-- <a routerLinkActive="active" routerLink="/manage">Admin</a> -->
       </li>
-      <li *ngIf="isAuth && role === '1'"  [ngClass]="{ 'target': isTarget === 'sub-orders'  }" (click)="onClickLink('sub-orders')">
+      <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'sub-orders'  }" (click)="onClickLink('sub-orders')">
         <a routerLinkActive="active" routerLink="/sub-orders">SubOrders</a>
         <!-- <a routerLinkActive="active" routerLink="/manage">Admin</a> -->
       </li>

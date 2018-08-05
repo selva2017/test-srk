@@ -19,21 +19,21 @@ export class OrdersComponent implements OnInit {
   }
 
   onLinkClick(event: MatTabChangeEvent) {
-    if (event.tab.textLabel == "Delete Sales Orders") {
-      this.showDeleteSO = true;
-      this.showRestoreSO = false;
-      this.showSO = false;
-    }
-    if (event.tab.textLabel == "Restore Sales Orders") {
-      this.showRestoreSO = true;
-      this.showDeleteSO = false;
-      this.showSO = false;
-    }
-    if (event.tab.textLabel == "Planned") {
-      this.showPlanned = true;
-      this.showDeleteSO = false;
-      this.showRestoreSO = false;
-      this.showSO = false;
-    }
+    // if (event.tab.textLabel == "Delete Sales Orders") {
+    //   this.showDeleteSO = true;
+    //   this.showRestoreSO = false;
+    //   this.showSO = false;
+    // }
+    // if (event.tab.textLabel == "Restore Sales Orders") {
+    //   this.showRestoreSO = true;
+    //   this.showDeleteSO = false;
+    //   this.showSO = false;
+    // }
+    // if (event.tab.textLabel == "Planned") {
+    //   this.showPlanned = true;
+    //   this.showDeleteSO = false;
+    //   this.showRestoreSO = false;
+    //   this.showSO = false;
+    // }
   }
 }
