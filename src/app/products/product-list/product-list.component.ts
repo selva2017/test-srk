@@ -1,3 +1,4 @@
+import { MatTableDataSource } from '@angular/material';
 import { ServerService } from './../../shared/server.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../shared/product.model';
@@ -8,17 +9,22 @@ import { Product } from '../../shared/product.model';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  dataSource = new MatTableDataSource<Product>();
+  displayedColumns = ['division_NAME'];
+  product_detail: Product[]=[];
 
   constructor(private serverService: ServerService) { }
-products: Product[];
+  
   ngOnInit() {
-    this.products = [];
-    this.serverService.fetchProductDetailForGroup('all')
+    // this.product_detail = [];
+    this.serverService.fetchAllProducts()
+    // this.serverService.fetchProductDetailForGroup('all')
       .subscribe(
         (list: Product[]) => {
           console.log(list);
-          this.products = list;
-          // this.loading.dismiss();
+          this.product_detail = list;
+          this.dataSource.data = this.product_detail;
+            // this.loading.dismiss();
           // this.disableItemName = false;
         },
         error => {

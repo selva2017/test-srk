@@ -1,0 +1,22 @@
+
+  .example-full-width {
+    width: 100%;
+    padding: 30px;
+    /* padding-left: 6px; */
+  }
+  
+  table, td, th {
+    /* border: .5px solid #ddd !important; */
+}
+.table {
+    /* min-width: 150px; */
+    /* max-width: 500px; */
+    width: 100%;
+  }
+  .example-first-header-row {
+    border-bottom: none;
+    color: white;
+    /* font-weight: bold; */
+    text-align: center;
+  }
+  

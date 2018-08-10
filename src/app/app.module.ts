@@ -1,3 +1,9 @@
+import { WeighingComponent } from './sub-orders/weighing/weighing.component';
+import { TransitComponent } from './sub-orders/transit/transit.component';
+import { LoadingComponent } from './sub-orders/loading/loading.component';
+import { DeviatedComponent } from './sub-orders/deviated/deviated.component';
+import { DeliveredComponent } from './sub-orders/delivered/delivered.component';
+import { CompletedComponent } from './sub-orders/completed/completed.component';
 import { DeliveredOrdersComponent } from './orders/delivered-orders/delivered-orders.component';
 import { CompletedOrdersComponent } from './orders/completed-orders/completed-orders.component';
 import { VehicleListComponent } from './vehicles/vehicle-list/vehicle-list.component';
@@ -79,7 +85,13 @@ import { RejectedOrdersComponent } from './orders/rejected-orders/rejected-order
     VehicleListComponent,
     RejectedOrdersComponent,
     CompletedOrdersComponent,
-    DeliveredOrdersComponent
+    DeliveredOrdersComponent,
+    CompletedComponent,
+    DeliveredComponent,
+    DeviatedComponent,
+    LoadingComponent,
+    TransitComponent,
+    WeighingComponent
   ],
   imports: [
     BrowserModule,
@@ -91,9 +103,9 @@ import { RejectedOrdersComponent } from './orders/rejected-orders/rejected-order
     ReactiveFormsModule,
     HttpModule,
     ChartModule,
-   
+
   ],
-  providers: [InventoryService,AuthService, ServerService,UIService,CommonServicesService],
+  providers: [InventoryService, AuthService, ServerService, UIService, CommonServicesService],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent]
 })

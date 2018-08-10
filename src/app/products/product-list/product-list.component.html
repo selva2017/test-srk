@@ -1,3 +1,50 @@
-<p>
-  product-list works!
-</p>
+<div padding *ngFor="let row of product_detail; let i = index">
+  <!-- Division: {{row.division_NAME}} -->
+  <div *ngFor="let group of row.productGroups; let j = index ">
+    <!-- Product Group: {{group.product_GROUP_NAME}} -->
+    <table class="example-full-width" border="0">
+      <thead style="background:#ffab40" class="example-first-header-row">
+      <th>Product Name</th>
+      <th>Product Cost</th>
+      <th>Loading Cost</th>
+      <th>Laying Cost</th>
+      <th>CGST</th>
+      <th>SGST</th>
+      <th>Group Name</th>
+      <th>Division Name</th>
+      <!-- <th *ngIf="group.products.productDetails?.length > 0">Product Details</th> -->
+      <th>Product Details</th>
+      </thead>
+      <tbody>
+      <!-- <tr *ngFor="let product of group.products"  style="text-align: center"> -->
+      <tr *ngFor="let product of group.products">
+        <td>{{product.product_NAME}} </td>
+        <td>{{product.product_COST}} </td>
+        <td>{{product.loading_COST}} </td>
+        <td>{{product.laying_COST}}</td>
+        <td>{{product.product_TAX1}}</td>
+        <td>{{product.product_TAX2}}</td>
+        <td>{{group.product_GROUP_NAME}}</td>
+        <td>{{row.division_NAME}}</td>
+        <div *ngIf="product.productDetails?.length > 0">
+          <!-- <th>Product Details</th> -->
+          <div *ngFor="let item of product.productDetails">
+            <td>
+              <!-- <td border=".5"> {{item.product_DETAIL_NAME}}</td> -->
+              {{item.product_DETAIL_NAME}}
+            </td>
+          </div>
+        </div>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- <mat-table [dataSource]="dataSource" matSort style="width: 100%">
+  <ng-container matColumnDef="division_NAME">
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Division #</mat-header-cell>
+    <mat-cell *matCellDef="let element" fxFlex="10%">{{ element.division_NAME }}</mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns" style="background:#ffab40"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table> -->

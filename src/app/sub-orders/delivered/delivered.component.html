@@ -8,7 +8,7 @@
     <mat-form-field fxFlex="40%">
       <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
-    <!-- <button type="submit" mat-raised-button color="accent" (click)="exporttoCSV()">Export to Excel</button> -->
+    <button type="submit" mat-raised-button color="primary" (click)="exporttoCSV()">Export to Excel</button>
   </div>
 
   <!-- <p>Approved SubOrders List</p> -->
@@ -59,7 +59,6 @@
           {{convertIndianFormat(element.unit)}}
         </div>
       </mat-cell>
-
     </ng-container>
 
     <ng-container matColumnDef="unit">
@@ -70,6 +69,16 @@
     <ng-container matColumnDef="order_PRODUCT_COST">
       <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">Product Cost</mat-header-cell>
       <mat-cell *matCellDef="let element" fxFlex="10%">{{ convertIndianRupee(element.order_PRODUCT_COST)}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="order_TAX1">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">CGST</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="10%">{{ convertIndianRupee(element.order_TAX1)}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="order_TAX2">
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="10%" class="example-first-header-row">SGST</mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="10%">{{ convertIndianRupee(element.order_TAX2)}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="order_TOTAL_COST">
