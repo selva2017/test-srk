@@ -26,16 +26,15 @@
         <!-- <a routerLink="/training">Training</a> -->
         <a routerLinkActive="active" routerLink="/manage">Admin</a>
       </li>
-      <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'price-check'  }" (click)="onClickLink('price-check')">
-        <!-- <a routerLink="/training">Training</a> -->
+      <!-- <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'price-check'  }" (click)="onClickLink('price-check')">
         <a routerLinkActive="active" routerLink="/price-check">Price Check</a>
-      </li>
+      </li> -->
       <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'employees'  }" (click)="onClickLink('employees')">
         <a routerLinkActive="active" routerLink="/employees">Employees</a>
       </li>
-      <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'vehicles'  }" (click)="onClickLink('vehicles')">
+      <!-- <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'vehicles'  }" (click)="onClickLink('vehicles')">
         <a routerLinkActive="active" routerLink="/vehicles">Vehicles</a>
-      </li>
+      </li> -->
       <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'products'  }" (click)="onClickLink('products')">
         <a routerLinkActive="active" routerLink="/products">Products</a>
       </li>

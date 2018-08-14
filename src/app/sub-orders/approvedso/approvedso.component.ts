@@ -41,7 +41,7 @@ export class ApprovedsoComponent implements OnInit {
     // this.subscription = this.serverService.getMessages().
     this.subscription = this.serverService.fetchAllSubOrders("APPROVED").
       subscribe(list => {
-        console.log(list);
+        // console.log(list);
         this.subOrders = list;
         setTimeout(() => {
           this.dataSource.data = this.subOrders;

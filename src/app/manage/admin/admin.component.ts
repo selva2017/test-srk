@@ -76,7 +76,7 @@ export class AdminComponent implements OnInit {
       subscribe(list => {
         this.userList = list;
         // console.log("this.userlist");
-        console.log(this.userList);
+        // console.log(this.userList);
         this.dataSource.data = list;
         this.showLoader = false;
         this.uiService.loadingStateChanged.next(false);

@@ -33,23 +33,25 @@ const routes: Routes = [
   // { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   // { path: 'dashboard', component: DashboardComponent}
   { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
-  { path: 'sub-orders', component: SubOrdersComponent},
-  // { path: 'sub-orders', component: SubOrdersComponent, canActivate: [AuthGuard] },
+  // { path: 'sub-orders', component: SubOrdersComponent },
+  { path: 'sub-orders', component: SubOrdersComponent, canActivate: [AuthGuard] },
   { path: 'all', component: AllComponent },
   { path: 'estimated', component: EstimatedComponent },
   { path: 'reestimated', component: ReEstimatedComponent },
   { path: 'approved', component: ApprovedComponent, canActivate: [AuthGuard] },
-  { path: 'price-check', component: PriceCheckComponent},
+  // { path: 'price-check', component: PriceCheckComponent },
   // { path: 'price-check', component: PriceCheckComponent, canActivate: [AuthGuard] },
   { path: 'pcrequests', component: PcRequestsComponent, canActivate: [AuthGuard] },
   { path: 'pcresponses', component: PcResponsesComponent, canActivate: [AuthGuard] },
-  { path: 'products', component: ProductsComponent},
-  // { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
-  { path: 'product-list', component: ProductListComponent, canActivate: [AuthGuard] },
+  // { path: 'products', component: ProductsComponent },
+  { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
+  // { path: 'product-list', component: ProductListComponent },
+  // { path: 'product-list', component: ProductListComponent, canActivate: [AuthGuard] },
   { path: 'employees', component: EmployeesComponent, canActivate: [AuthGuard] },
-  { path: 'employee-list', component: EmployeeListComponent, canActivate: [AuthGuard] },
-  { path: 'vehicles', component: VehiclesComponent, canActivate: [AuthGuard] },
-  { path: 'vehicle-list', component: VehicleListComponent, canActivate: [AuthGuard] }
+  // { path: 'employee-list', component: EmployeeListComponent },
+  // { path: 'employee-list', component: EmployeeListComponent, canActivate: [AuthGuard] },
+  // { path: 'vehicles', component: VehiclesComponent, canActivate: [AuthGuard] },
+  // { path: 'vehicle-list', component: VehicleListComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
