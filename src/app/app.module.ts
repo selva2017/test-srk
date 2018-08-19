@@ -1,3 +1,6 @@
+import { BusinessCustomersComponent } from './customers/business-customers/business-customers.component';
+import { NonBusinessCustomersComponent } from './customers/non-business-customers/non-business-customers.component';
+import { CustomersComponent } from './customers/customers.component';
 import { WeighingComponent } from './sub-orders/weighing/weighing.component';
 import { TransitComponent } from './sub-orders/transit/transit.component';
 import { LoadingComponent } from './sub-orders/loading/loading.component';
@@ -91,7 +94,10 @@ import { RejectedOrdersComponent } from './orders/rejected-orders/rejected-order
     DeviatedComponent,
     LoadingComponent,
     TransitComponent,
-    WeighingComponent
+    WeighingComponent,
+    CustomersComponent,
+    NonBusinessCustomersComponent,
+    BusinessCustomersComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { CustomersComponent } from './customers/customers.component';
 import { VehicleListComponent } from './vehicles/vehicle-list/vehicle-list.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { EmployeesComponent } from './employees/employees.component';
@@ -48,6 +49,9 @@ const routes: Routes = [
   // { path: 'product-list', component: ProductListComponent },
   // { path: 'product-list', component: ProductListComponent, canActivate: [AuthGuard] },
   { path: 'employees', component: EmployeesComponent, canActivate: [AuthGuard] },
+  // { path: 'employees', component: EmployeesComponent },
+  // { path: 'customers', component: CustomersComponent },
+  { path: 'customers', component: CustomersComponent, canActivate: [AuthGuard] },
   // { path: 'employee-list', component: EmployeeListComponent },
   // { path: 'employee-list', component: EmployeeListComponent, canActivate: [AuthGuard] },
   // { path: 'vehicles', component: VehiclesComponent, canActivate: [AuthGuard] },

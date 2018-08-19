@@ -32,6 +32,9 @@
       <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'employees'  }" (click)="onClickLink('employees')">
         <a routerLinkActive="active" routerLink="/employees">Employees</a>
       </li>
+      <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'customers'  }" (click)="onClickLink('customers')">
+        <a routerLinkActive="active" routerLink="/customers">Customers</a>
+      </li>
       <!-- <li *ngIf="isAuth && role === '1'" [ngClass]="{ 'target': isTarget === 'vehicles'  }" (click)="onClickLink('vehicles')">
         <a routerLinkActive="active" routerLink="/vehicles">Vehicles</a>
       </li> -->
