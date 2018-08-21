@@ -20,7 +20,7 @@ export class BusinessCustomersComponent implements OnInit {
   dataSource = new MatTableDataSource<CustomerMaster>();
   subscription: Subscription;
   // displayedColumns = ['index', 'order_DT', 'order_GROUP_NO', 'customer_NAME', 'product_NAME', 'product_UNIT_COST', 'total_ORDER_UNIT', 'total_COST', 'sales_REP_NAME', 'order_STATUS'];
-  displayedColumns = ['index', 'cust_ID', 'cust_NAME', 'cust_PHONE1', 'cust_PHONE2', 'alias', 'address', 'city', 'district','pinCode'];
+  displayedColumns = ['index', 'cust_ID', 'cust_NAME', 'cust_PHONE1', 'cust_PHONE2', 'alias', 'sales_REP_NAME','address', 'city', 'district','pinCode'];
 
   showLoader: boolean;
   isLoading = false;

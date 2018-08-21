@@ -44,6 +44,10 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header class="example-first-header-row">Alias Name</mat-header-cell>
       <mat-cell *matCellDef="let element">{{ element.alias}}</mat-cell>
     </ng-container>
+    <ng-container matColumnDef="sales_REP_NAME">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="example-first-header-row">Sales Rep</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.sales_REP_NAME}}</mat-cell>
+    </ng-container>
 
 
     <ng-container matColumnDef="address">

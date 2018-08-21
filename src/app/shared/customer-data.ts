@@ -33,4 +33,5 @@ export interface CustomerMaster {
     site_CONTACT_NUMBER: string;
     site_ID: string;
     site_NAME: string;
+    sales_REP_NAME: string;
 }
