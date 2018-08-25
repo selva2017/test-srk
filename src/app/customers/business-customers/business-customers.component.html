@@ -1,6 +1,6 @@
 <div *ngIf="isLoading" class="loader-padding" fxLayout="column" fxLayoutAlign="center center" style="position:fixed;top:50%;left:50%;"
   style="position:fixed;top:40%;left:45%;">
-  <mat-progress-spinner color="accent" mode="indeterminate"></mat-progress-spinner>
+  <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
 </div>
 <div *ngIf="!isLoading" style="padding:20px;">
 
@@ -8,7 +8,7 @@
     <mat-form-field fxFlex="40%">
       <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
-    <!-- <button type="submit" mat-raised-button color="accent" (click)="exporttoCSV()">Export to Excel</button> -->
+    <!-- <button type="submit" mat-raised-button color="primary" (click)="exporttoCSV()">Export to Excel</button> -->
   </div>
 
   <!-- <p>Order List</p> -->
@@ -76,7 +76,7 @@
       <mat-cell *matCellDef="let element">{{ element.bloodGroup}}</mat-cell>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns" style="background:#ffab40"></mat-header-row>
+    <mat-header-row *matHeaderRowDef="displayedColumns" style="background:#3f51b5"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 

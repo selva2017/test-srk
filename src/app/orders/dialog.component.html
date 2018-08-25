@@ -93,12 +93,12 @@
         <mat-cell *matCellDef="let element">{{ element.sub_ORDER_STATUS}}</mat-cell>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns" style="background:#ffab40"></mat-header-row>
+    <mat-header-row *matHeaderRowDef="displayedColumns" style="background:#3f51b5"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
 <br>
 <div align="center">
-    <!-- <button mat-raised-button color="accent" [mat-dialog-close]="true">Hide</button> -->
+    <!-- <button mat-raised-button color="primary" [mat-dialog-close]="true">Hide</button> -->
     <button mat-raised-button color="primary" [mat-dialog-close]="false" cdkFocusInitial>Close</button>
 </div>
 <!-- <div class="main-content">
@@ -130,7 +130,7 @@
                     </table>
                     <br>
                     <div align="center">
-                        <button mat-raised-button color="accent" [mat-dialog-close]="false" cdkFocusInitial>Cancel</button>
+                        <button mat-raised-button color="primary" [mat-dialog-close]="false" cdkFocusInitial>Cancel</button>
                     </div>
                 </div>
             </div>

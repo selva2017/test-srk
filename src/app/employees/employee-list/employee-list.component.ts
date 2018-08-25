@@ -20,7 +20,7 @@ export class EmployeeListComponent implements OnInit {
   dataSource = new MatTableDataSource<Employees>();
   subscription: Subscription;
   // displayedColumns = ['index', 'order_DT', 'order_GROUP_NO', 'customer_NAME', 'product_NAME', 'product_UNIT_COST', 'total_ORDER_UNIT', 'total_COST', 'sales_REP_NAME', 'order_STATUS'];
-  displayedColumns = ['index', 'empId', 'empCode', 'firstName', 'lastName', 'empDesignationName', 'contactNumber1', 'gender', 'bloodGroup'];
+  displayedColumns = ['index','empCode', 'firstName', 'lastName', 'empDesignationName', 'contactNumber1', 'gender', 'bloodGroup'];
 
   showLoader: boolean;
   isLoading = false;
